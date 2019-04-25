@@ -5,11 +5,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
-      var url = "https://dog.ceo/api/breeds/image/random"
-      $.get(url, function(data, status){
-        console.log(data.message);
+      $.get("https://dog.ceo/api/breeds/image/random", function(data, status){
         $('div').css("background-image", 'url("' + data.message +'")');
-        $('div').css("background-image", 'url("' + data.message +'")');
+        $('a').attr("href", data.message);
       });
     });
   </script>
@@ -28,6 +26,8 @@
   </style>
 </head>
 <body>
-  <div id="bg"></div>
+  <a href="#">
+    <div></div>
+  </a>
 </body>
 </html>
